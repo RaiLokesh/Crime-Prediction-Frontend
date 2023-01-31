@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import DateTimePicker from 'react-datetime-picker';
 
-const Prediction = ({lat, lon}) => {
+const Prediction = ({date, onDateChange, predictResult}) => {
+  useEffect(()=>{
+    console.log("Date:", date, "DateType:", typeof(date))
+  }, [date])
   return (
-    <div>
-        <h2>Latitude:{lat}</h2>
-        <h2>Longitude:{lon}</h2>
+    <div style={{display:"flex"}}>
+        <DateTimePicker onChange={onDateChange} value={date} />
+        <button onClick={()=>predictResult()}>Predict</button>
     </div>
   )
 }
