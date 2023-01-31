@@ -31,10 +31,12 @@ function App() {
   }, [dateVal])
 
   const predictResult = (()=>{
+    console.log("Latitude:", lat, "Longitude:", lon)
+    let json = {"day" : day , "month" : month , "year" : year , "hour" : hour , "minutes" : minutes , "latitude" : lat , "longitude" : lon}
     async function getPrediction() {
-      await axios.post('/predict')
+      await axios.post('predict/', json)
           .then(res => {
-              setPrediction(res.data.value)
+              setPrediction(res.data)
           })
           .catch(err => {
               console.log("Error::", err)
