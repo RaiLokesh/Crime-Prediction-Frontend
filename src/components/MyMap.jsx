@@ -10,8 +10,8 @@ const MyMap = ({lat, lon, setLat, setLon}) => {
         <Map
             mapboxAccessToken={process.env.REACT_APP_MAP_BOX_ACCESS_TOKEN}
             initialViewState={{
-                latitude: 49.26171580311674,
-                longitude: -123.11452608833008,
+                latitude: lat,
+                longitude: lon,
                 zoom: 12
             }}
             style={{ width: "100%", height: "100vh" }}

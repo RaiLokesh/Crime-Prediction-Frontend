@@ -37,3 +37,63 @@
     transform: rotate(360deg);
   }
 }
+
+.predDivMain {
+  width: 25vw;
+  height: 100vh;
+  display: flex;
+  background-color: #3C434E;
+}
+
+.predDivCard {
+  width: 90%;
+  margin: auto;
+  background-color: #262627;
+  filter: drop-shadow(.1rem .1rem 0.5rem #6b6565);
+  height:80vh;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.predDivInt1{
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.predDiv0{
+  display: flex;
+  margin-top: 5%;
+  justify-content: center;
+  color:#8694b0;
+  font-size: calc(8px + 2vmin);
+  padding-left:1%; padding-right: 1%;
+}
+
+.predDivInt{
+  background-color: #2f3237;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  height: 100%;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.react-datetime-picker{
+  background-color: aliceblue;
+  border-radius: 10px;
+  height: 30px;
+}
+
+.react-datetime-picker__wrapper{
+  border:none !important;
+}
+
+.predDivInt2 {
+  color:white;
+  margin-top: 15%;
+}
