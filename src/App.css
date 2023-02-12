@@ -33,6 +33,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -50,28 +51,29 @@
   margin: auto;
   background-color: #262627;
   filter: drop-shadow(.1rem .1rem 0.5rem #6b6565);
-  height:80vh;
+  height: 80vh;
   border-radius: 5%;
   display: flex;
   flex-direction: column;
 }
 
-.predDivInt1{
-  
+.predDivInt1 {
+
   display: flex;
   flex-direction: column;
 }
 
-.predDiv0{
+.predDiv0 {
   display: flex;
   margin-top: 5%;
   justify-content: center;
-  color:#8694b0;
+  color: #8694b0;
   font-size: calc(8px + 2vmin);
-  padding-left:1%; padding-right: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
-.predDivInt{
+.predDivInt {
   background-color: #2f3237;
   margin-left: 5%;
   margin-right: 5%;
@@ -83,22 +85,22 @@
   overflow: auto;
 }
 
-.react-datetime-picker{
+.react-datetime-picker {
   background-color: aliceblue;
   border-radius: 10px;
   height: 30px;
 }
 
-.react-datetime-picker__wrapper{
-  border:none !important;
+.react-datetime-picker__wrapper {
+  border: none !important;
 }
 
 .predDivInt2 {
-  color:white;
+  color: white;
   margin-top: 15%;
 }
 
-.predDivInt1_{
+.predDivInt1_ {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -106,4 +108,8 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 80%;
+}
+
+.prevDivInt0::-webkit-scrollbar {
+  display: none;
 }

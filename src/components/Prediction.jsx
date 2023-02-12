@@ -20,7 +20,7 @@ const Prediction = ({ allDayPredictions, date, onDateChange, predictResult, pred
           {
 
             isHome ?
-              <div style={{ margin: "2%", overflow: "scroll", height: "100%" }}>
+              <div className='prevDivInt0' style={{ margin: "2%", overflow: "scroll", height: "100%" }}>
 
                 <div className='predDivInt1' >
                   <div>
