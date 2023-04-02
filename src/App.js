@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Prediction from './components/Prediction';
 import axios from './components/Axios'
 import Login from './components/Auth/Login';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const [lat, setLat] = useState(49.26171580311674)
@@ -17,6 +18,8 @@ function App() {
 
   const [prediction, setPrediction] = useState()
   const [allDayPredictions, setAllDayPredictions] = useState()
+
+  const [userExists, setUserExists] = useState(false)
 
   useEffect(() => {
     day = dateVal?.getDate()
@@ -60,21 +63,45 @@ function App() {
     onDateChange(new Date())
     setPrediction(null)
   })
-
+  useEffect(() => {
+    if (sessionStorage.getItem('username') === null) {
+      setUserExists(false)
+    } else {
+      setUserExists(true)
+    }
+  }, [userExists])
   return (
+
+
     <div className="App">
-      <Login />
-      {/*}
-      <div style={{ width: "75vw" }}>
-        <MyMap
-          lat={lat}
-          setLat={setLat}
-          lon={lon}
-          setLon={setLon}
-        />
-      </div>
-      <Prediction allDayPredictions={allDayPredictions} date={dateVal} onDateChange={onDateChange} predictResult={predictResult} prediction={prediction} resetAll={resetAll} />
-      */}
+      {
+        userExists ? <>
+          <div style={{ width: "75vw" }}>
+            <MyMap
+              lat={lat}
+              setLat={setLat}
+              lon={lon}
+              setLon={setLon}
+            />
+          </div>
+          <Prediction setUserExists={setUserExists} allDayPredictions={allDayPredictions} date={dateVal} onDateChange={onDateChange} predictResult={predictResult} prediction={prediction} resetAll={resetAll} />
+        </>
+          :
+          <Login setUserExists={setUserExists} />
+      }
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }

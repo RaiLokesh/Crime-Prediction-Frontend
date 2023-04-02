@@ -66,7 +66,7 @@
 .predDiv0 {
   display: flex;
   margin-top: 5%;
-  justify-content: center;
+  justify-content: space-evenly;
   color: #8694b0;
   font-size: calc(8px + 2vmin);
   padding-left: 1%;

@@ -1,11 +1,22 @@
+.kl {
+    background-image: url("../images/poliback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
 .w-100 {
-    height: -webkit-fill-available;
+    /*height: -webkit-fill-available;*/
+    height: 100%;
     object-fit: cover;
 }
+
 .card {
-    margin-top: 5%;
+    margin-top: 4%;
     max-width: 70%;
 }
+
 .container {
     display: flex;
     justify-content: center;

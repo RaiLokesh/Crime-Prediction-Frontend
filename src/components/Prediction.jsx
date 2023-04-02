@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react'
 import DateTimePicker from 'react-datetime-picker';
 import { MdOnlinePrediction, MdOutlineIntegrationInstructions } from 'react-icons/md'
 import { CgShapeCircle } from 'react-icons/cg'
+import {AiOutlineRollback, AiOutlineMenu} from 'react-icons/ai'
 import Chart from './Chart';
 
-const Prediction = ({ allDayPredictions, date, onDateChange, predictResult, prediction, resetAll }) => {
+const Prediction = ({ setUserExists, allDayPredictions, date, onDateChange, predictResult, prediction, resetAll }) => {
   const [isHome, setIsHome] = useState(true)
+  const clickBack = (e) => {
+    sessionStorage.removeItem('username');
+    setUserExists(false);
+  }
   useEffect(() => {
     console.log("Date:", date, "DateType:", typeof (date))
   }, [date])
@@ -66,7 +71,9 @@ const Prediction = ({ allDayPredictions, date, onDateChange, predictResult, pred
           }
         </div>
         <div className='predDiv0'>
-          <CgShapeCircle onClick={() => resetAll()} style={{ marginBottom: "5%", cursor: "pointer" }} />
+          <AiOutlineMenu style={{ marginBottom: "5%", cursor: "pointer" }} />
+          <CgShapeCircle onClick={() => resetAll()} style={{ marginBottom: "5%", cursor: "pointer" }} /> 
+          <AiOutlineRollback onClick={()=>clickBack()} style={{ marginBottom: "5%", cursor: "pointer" }} />
         </div>
       </div>
 
