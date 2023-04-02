@@ -3,6 +3,7 @@ import MyMap from './components/MyMap';
 import { useEffect, useState } from "react";
 import Prediction from './components/Prediction';
 import axios from './components/Axios'
+import Login from './components/Auth/Login';
 
 function App() {
   const [lat, setLat] = useState(49.26171580311674)
@@ -62,6 +63,8 @@ function App() {
 
   return (
     <div className="App">
+      <Login />
+      {/*}
       <div style={{ width: "75vw" }}>
         <MyMap
           lat={lat}
@@ -71,7 +74,7 @@ function App() {
         />
       </div>
       <Prediction allDayPredictions={allDayPredictions} date={dateVal} onDateChange={onDateChange} predictResult={predictResult} prediction={prediction} resetAll={resetAll} />
-
+      */}
     </div>
   );
 }

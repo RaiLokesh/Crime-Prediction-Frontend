@@ -1,0 +1,12 @@
+.w-100 {
+    height: -webkit-fill-available;
+    object-fit: cover;
+}
+.card {
+    margin-top: 5%;
+    max-width: 70%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
